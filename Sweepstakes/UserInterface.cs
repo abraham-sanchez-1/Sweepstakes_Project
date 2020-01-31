@@ -16,5 +16,18 @@ namespace Sweepstakes
             string userInput = Console.ReadLine();
             return userInput;
         }
+        public static string GetManagerType()
+        {
+            Console.WriteLine("Select a manager type:\nStack\nQueue\n");
+            Console.WriteLine("Enter:");
+            string userInput = Console.ReadLine();
+            if (userInput.ToLower() == "stack" || userInput.ToLower() == "queue")
+            {
+                return userInput.ToLower();
+            }
+            Console.WriteLine("Selection was invalid, try again...");
+            return GetManagerType();
+        }
+
     }
 }

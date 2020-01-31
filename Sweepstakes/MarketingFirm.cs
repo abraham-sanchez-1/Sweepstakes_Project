@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class MarketingFirm 
+    public class MarketingFirm
     {
         //member variable
-        ISweepstakeManager manager;
+        ISweepstakesManager _manager;
 
         //constructor
         public MarketingFirm(ISweepstakesManager manager)
         {
-            this.manager = manager;
+            _manager = manager;
         }
         //member method
         public void CreateSweepstake()
         {
+            string response = UserInterface.GetUserInputFor("Please give this new sweepstake a name.");
+            Sweepstakes sweepstakes = new Sweepstakes(response);
+            _manager.InsertSweepstakes(sweepstakes);
 
         }
 

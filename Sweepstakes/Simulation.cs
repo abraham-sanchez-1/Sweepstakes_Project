@@ -16,7 +16,21 @@ namespace Sweepstakes
         //member method
         public void CreateMarketingFirmWithManager()
         {
+            MarketingFirm firm = new MarketingFirm(MarketingFactory.CreateManagerType(UserInterface.GetManagerType()));
 
+            //string respose = UserInterface.GetUserInputFor("Select a manager type:\nStack\nQueue\n");
+            //switch (respose.ToLower())
+            //{
+            //    case "stack":
+            //        break;
+            //    case "queue":
+            //        MarketingFactory.CreateManagerType("queue");
+            //            break;
+            //    default:
+            //        Console.WriteLine("Your selection was invalid, please try again...");
+            //        CreateMarketingFirmWithManager();
+            //        break;
+            //}
         }
         
     }

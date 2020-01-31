@@ -10,6 +10,7 @@ namespace Sweepstakes
     {
         //member variable
         private Stack<Sweepstakes> stack;
+
         //constructor
 
         //member method

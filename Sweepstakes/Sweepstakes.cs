@@ -30,6 +30,7 @@ namespace Sweepstakes
             Random random = new Random();
             int winner = random.Next(0, count);
             Console.WriteLine("Winner of {0} sweepstake is {1}", Name, contestants[winner]);
+            //email API, use email address of this user. contestants[winner].emailAddress
         }
         public void PrintContestantInfo(Contestant contestant)
         {
