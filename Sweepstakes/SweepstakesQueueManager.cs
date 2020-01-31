@@ -15,11 +15,11 @@ namespace Sweepstakes
         //member method
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-
+            stack.Enqueue(sweepstakes);
         }
         public Sweepstakes GetSweepstakes()
         {
-
+            return stack.Dequeue();
         }
     }
 }

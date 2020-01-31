@@ -20,7 +20,7 @@ namespace Sweepstakes
         }
         public Sweepstakes GetSweepstakes()
         {
-            stack.Pop();
+            return stack.Pop();
         }
     }
 }
