@@ -11,7 +11,10 @@ namespace Sweepstakes
         //member variable
         private Queue<Sweepstakes> stack;
         //constructor
-       
+        public SweepstakesQueueManager()
+        {
+            stack = new Queue<Sweepstakes>();
+        }
         //member method
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
