@@ -45,8 +45,7 @@
   <ItemGroup>
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Contestant.cs" />
-    <Compile Include="IObservable.cs" />
-    <Compile Include="IObserver.cs" />
+    <Compile Include="ContestantWinner.cs" />
     <Compile Include="ISweepstakesManager.cs" />
     <Compile Include="MarketingFactory.cs" />
     <Compile Include="MarketingFirm.cs" />

@@ -17,6 +17,9 @@ namespace Sweepstakes
         public void CreateMarketingFirmWithManager()
         {
             MarketingFirm firm = new MarketingFirm(MarketingFactory.CreateManagerType(UserInterface.GetManagerType()));
+            firm.CreateSweepstake();
+            
+
 
             //string respose = UserInterface.GetUserInputFor("Select a manager type:\nStack\nQueue\n");
             //switch (respose.ToLower())

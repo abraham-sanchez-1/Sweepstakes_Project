@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class Sweepstakes
+    public class Sweepstakes 
     {
         //member variables
         Dictionary<int, Contestant> contestants;
         private string name;
         public string Name;
         private int count = 0;
+        private int winner;
         //constructor
 
         //member method
@@ -23,15 +24,16 @@ namespace Sweepstakes
         }
         public void RegisterContestant(Contestant contestant)
         {
-            contestants.Add(contestant.registrationNumber, contestant);
+            contestants.Add(count, contestant);
             count++;
         }
         public Contestant ContestantPickWinner()
         {
             Random random = new Random();
-            int key = random.Next(0, count);
-            Console.WriteLine("Winner has been selected:");
-            PrintContestantInfo(contestants[key]);
+            int key = random.Next(1, count);
+            winner = key;
+            contestants[key] = new ContestantWinner(contestants[key].firstName, contestants[key].lastName, contestants[key].emailAddress, contestants[key].registrationNumber);
+            Notify();
             return contestants[key];
             //email API, use email address of this user. contestants[winner].emailAddress
         }
@@ -40,8 +42,14 @@ namespace Sweepstakes
             Console.WriteLine("***Contestant Information***");
             Console.WriteLine("{0}, {1}\nEmail: {2}\nRegistration #: {3}\n",contestant.lastName, contestant.firstName, contestant.emailAddress, contestant.registrationNumber);
         }
-        
 
-
+        public void Notify()
+        {
+            foreach (KeyValuePair<int, Contestant> item in contestants)
+            {
+                item.Value.Notify();
+            }
+            
+        }
     }
 }
